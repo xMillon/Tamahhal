@@ -2,6 +2,7 @@
 const messageInput = document.getElementById("message");
 const checkButton = document.getElementById("check");
 const senderInput = document.getElementById("sender");
+const resultBox = document.getElementById("result");
 
 
 // هنا لما المستخدم يضغط الزر
@@ -36,10 +37,10 @@ checkButton.addEventListener("click", function () {
     console.log("الدرجة :", score);
 
     if (score >= 4) {
-        console.log("علامات احتيال واضحة");
+        resultBox.textContent = "علامات احتيال واضحة";
     } else if (score >= 1) {
-        console.log("إشارات تستحق الانتباه");
+        resultBox.textContent = "إشارات تستحق الانتباه";
     } else {
-        console.log("لم نجد إشارات معروفة، وهذا لا يعني أنها آمنة");
+        resultBox.textContent = "لم نجد إشارات معروفة، وهذا لا يعني أنها آمنة";
     }
 });
