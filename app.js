@@ -34,4 +34,12 @@ checkButton.addEventListener("click", function () {
         score += 3;
     }
     console.log("الدرجة :", score);
+
+    if (score >= 4) {
+        console.log("علامات احتيال واضحة");
+    } else if (score >= 1) {
+        console.log("إشارات تستحق الانتباه");
+    } else {
+        console.log("لم نجد إشارات معروفة، وهذا لا يعني أنها آمنة");
+    }
 });
