@@ -8,6 +8,7 @@ const senderInput = document.getElementById("sender");
 checkButton.addEventListener("click", function () {
     const text = messageInput.value;
     const sender = senderInput.value;
+    let score = 0;
     console.log(text);
     if (
         text.includes("حظر") ||
@@ -25,9 +26,12 @@ checkButton.addEventListener("click", function () {
         text.includes("تقييد")
     ) {
         console.log("إشارة متوسطة : تهديد بفقدان شيء");
+        score += 2;
         }
     console.log(sender);
     if (sender.startsWith("05") || sender.startsWith("+9665")) {
         console.log("إشارة عالية : المرسل رقم جوال");
+        score += 3;
     }
+    console.log("الدرجة :", score);
 });
