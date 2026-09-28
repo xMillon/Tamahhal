@@ -9,6 +9,9 @@ checkButton.addEventListener("click", function () {
     const text = messageInput.value;
     const sender = senderInput.value;
     console.log(text);
+    if (text.includes("حظر")) {
+        console.log("إشارة متوسطة : تهديد بفقدان شيء");
+        }
     console.log(sender);
     if (sender.startsWith("05") || sender.startsWith("+9665")) {
         console.log("إشارة عالية : المرسل رقم جوال");
