@@ -10,6 +10,7 @@ checkButton.addEventListener("click", function () {
     const text = messageInput.value;
     const sender = senderInput.value;
     let score = 0;
+    let reasons = [];
     console.log(text);
     if (
         text.includes("حظر") ||
@@ -28,13 +29,16 @@ checkButton.addEventListener("click", function () {
     ) {
         console.log("إشارة متوسطة : تهديد بفقدان شيء");
         score += 2;
+        reasons.push("الرسالة تحاول تخويفك بفقدان بطاقتك أو حسابك حتى تتصرف بسرعة. تمهل، وتحقق من تطبيق البنك مباشرة.");
         }
     console.log(sender);
     if (sender.startsWith("05") || sender.startsWith("+9665")) {
         console.log("إشارة عالية : المرسل رقم جوال");
         score += 3;
+        reasons.push("المرسل رقم جوال، والجهات الرسمية ترسل من اسم مسجّل.");
     }
     console.log("الدرجة :", score);
+    console.log(reasons);
 
     if (score >= 4) {
         resultBox.textContent = "علامات احتيال واضحة";
@@ -43,4 +47,6 @@ checkButton.addEventListener("click", function () {
     } else {
         resultBox.textContent = "لم نجد إشارات معروفة، وهذا لا يعني أنها آمنة";
     }
+
+    resultBox.textContent += "\n\n" + reasons.join("\n");
 });
