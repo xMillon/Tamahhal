@@ -9,7 +9,21 @@ checkButton.addEventListener("click", function () {
     const text = messageInput.value;
     const sender = senderInput.value;
     console.log(text);
-    if (text.includes("حظر")) {
+    if (
+        text.includes("حظر") ||
+        text.includes("توقف") ||
+        text.includes("إيقاف") ||
+        text.includes("ايقاف") ||
+        text.includes("تعليق") ||
+        text.includes("تجميد") ||
+        text.includes("إغلاق") ||
+        text.includes("اغلاق") ||
+        text.includes("مصادرة") ||
+        text.includes("إبطال") ||
+        text.includes("إنهاء") ||
+        text.includes("انهاء") ||
+        text.includes("تقييد")
+    ) {
         console.log("إشارة متوسطة : تهديد بفقدان شيء");
         }
     console.log(sender);
