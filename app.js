@@ -31,6 +31,15 @@ checkButton.addEventListener("click", function () {
         score += 2;
         reasons.push("الرسالة تحاول تخويفك بفقدان بطاقتك أو حسابك حتى تتصرف بسرعة. تمهل، وتحقق من تطبيق البنك مباشرة.");
         }
+
+        if (
+            text.includes("الاتصال") ||
+            text.includes("لتحديث")
+        ) {
+            score += 3;
+            reasons.push("تمهل، لا تتصل بأي رقم مكتوب داخل رسالة. اتصل بالرقم المكتوب خلف بطاقتك أو في تطبيق البنك");
+        }
+
     console.log(sender);
     if (sender.startsWith("05") || sender.startsWith("+9665")) {
         console.log("إشارة عالية : المرسل رقم جوال");
