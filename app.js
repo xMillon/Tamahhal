@@ -40,6 +40,22 @@ checkButton.addEventListener("click", function () {
             reasons.push("تمهل، لا تتصل بأي رقم مكتوب داخل رسالة. اتصل بالرقم المكتوب خلف بطاقتك أو في تطبيق البنك");
         }
 
+        if (
+            (
+            text.includes("OTP") ||
+            text.includes("otp") ||
+            text.includes("التحقق")
+        ) && (
+            text.includes("ارسل") ||
+            text.includes("أرسل") ||
+            text.includes("زودنا") ||
+            text.includes("ابعث")
+                ) 
+            ) {
+            score += 3;
+            reasons.push("يرجى عدم مشاركة رمز التحقق مع أي شخص");
+        }
+
     console.log(sender);
     if (sender.startsWith("05") || sender.startsWith("+9665")) {
         console.log("إشارة عالية : المرسل رقم جوال");
