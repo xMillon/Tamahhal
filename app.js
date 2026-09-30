@@ -52,8 +52,8 @@ checkButton.addEventListener("click", function () {
             text.includes("ابعث")
                 ) 
             ) {
-            score += 3;
-            reasons.push("يرجى عدم مشاركة رمز التحقق مع أي شخص");
+            score += 4;
+            reasons.push("تمهّل، لا توجد جهة رسمية تطلب منك رمز التحقق. من يملك الرمز يقدر يدخل حسابك. عند الشك، اتصل بالرقم الرسمي المعتمد لدى الجهة.");
         }
 
     console.log(sender);
