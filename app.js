@@ -33,11 +33,22 @@ checkButton.addEventListener("click", function () {
         }
 
         if (
-            text.includes("الاتصال") ||
-            text.includes("لتحديث")
+            text.includes("الاتصال")
         ) {
             score += 3;
             reasons.push("تمهل، لا تتصل بأي رقم مكتوب داخل رسالة. اتصل بالرقم المكتوب خلف بطاقتك أو في تطبيق البنك");
+        }
+
+        if (
+            text.includes("تحديث بياناتك") ||
+            text.includes("حدث بياناتك") ||
+            text.includes("حدّث بياناتك") ||
+            text.includes("أكد هويتك") ||
+            text.includes("أكّد هويتك") ||
+            text.includes("اكد هويتك")
+        )   {
+            score += 2;
+            reasons.push("تمهّل، طلب تحديث البيانات قد يكون محاولة احتيال. حدّث بياناتك من تطبيق الجهة أو موقعها الرسمي فقط، وليس من أي رابط أو رقم داخل الرسالة.");
         }
 
         if (
