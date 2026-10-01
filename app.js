@@ -67,6 +67,11 @@ checkButton.addEventListener("click", function () {
             reasons.push("تمهّل، لا توجد جهة رسمية تطلب منك رمز التحقق. من يملك الرمز يقدر يدخل حسابك. عند الشك، اتصل بالرقم الرسمي المعتمد لدى الجهة.");
         }
 
+    if (/05\d{8}/.test(text)) {
+        score += 2;
+        reasons.push("تمهّل… مو كل رقم جوال جهة رسمية. الجهات تستخدم أرقامًا موحدة، خذ رقمها من تطبيقها أو موقعها الرسمي، مو من الرسالة.");
+    }
+
     console.log(sender);
     if (sender.startsWith("05") || sender.startsWith("+9665")) {
         console.log("إشارة عالية : المرسل رقم جوال");
