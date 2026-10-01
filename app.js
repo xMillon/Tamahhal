@@ -78,6 +78,16 @@ checkButton.addEventListener("click", function () {
         score += 3;
         reasons.push("المرسل رقم جوال، والجهات الرسمية ترسل من اسم مسجّل.");
     }
+
+    if (
+        text.includes("https") ||
+        text.includes("http") ||
+        text.includes("www.")
+    ) {
+        score += 1;
+        reasons.push("تمهّل… مو كل رابط يستاهل تضغطه. بدل الرابط، افتح تطبيق الجهة أو اكتب عنوان موقعها بنفسك.");
+    }
+
     console.log("الدرجة :", score);
     console.log(reasons);
 
