@@ -88,6 +88,16 @@ checkButton.addEventListener("click", function () {
         reasons.push("تمهّل… مو كل رابط يستاهل تضغطه. بدل الرابط، افتح تطبيق الجهة أو اكتب عنوان موقعها بنفسك.");
     }
 
+    if (
+        text.includes("bit.ly") ||
+        text.includes("tinyurl") ||
+        text.includes("t.co/") ||
+        text.includes("cutt.ly")
+    ) {
+        score +=1;
+        reasons.push("تمهّل… الرابط المختصر يخفي العنوان الحقيقي. قبل ما تضغط، تأكد من مصدره أو افتح موقع الجهة بنفسك.");
+    }
+
     console.log("الدرجة :", score);
     console.log(reasons);
 
