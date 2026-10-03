@@ -3,6 +3,7 @@ const messageInput = document.getElementById("message");
 const checkButton = document.getElementById("check");
 const senderInput = document.getElementById("sender");
 const resultBox = document.getElementById("result");
+const previewBox = document.getElementById("preview");
 
 
 // هنا لما المستخدم يضغط الزر
@@ -110,4 +111,6 @@ checkButton.addEventListener("click", function () {
     }
 
     resultBox.textContent += "\n\n" + reasons.join("\n");
+
+    
 });
