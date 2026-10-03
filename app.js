@@ -113,20 +113,24 @@ checkButton.addEventListener("click", function () {
     resultBox.textContent += "\n\n" + reasons.join("\n");
 
     previewBox.textContent = "";
-    const word = "حظر";
-    const start = text.indexOf(word);
-    console.log("مكان الكلمة:", start);
 
-    if (start !== -1) {
-        const end = start + word.length;
-        const before = text.slice(0, start);
-        const middle = text.slice(start, end);
-        const after = text.slice(end);
-        previewBox.append(before);
-        const mark = document.createElement("mark");
-        mark.textContent = middle;
-        previewBox.appendChild(mark);
-        previewBox.append(after);
+    const highlightWords = [
+        "إغلاق" , "اغلاق" , "تجميد" , "تعليق" , "إيقاف" , "ايقاف" , "توقف" , "حظر" , "حدث بياناتك" , "تحديث بياناتك" , "الاتصال" , "رمز التحقق" , "اكد هويتك" , "أكد هويتك" , "أكّد هويتك"
+    ];
+
+    // 2. المقص: نقص الرسالة عند كل الكلمات مرة وحدة
+    const pattern = new RegExp("(" + highlightWords.join("|") + ")");
+    const parts = text.split(pattern);
+
+    // 3. لوب: لكل قطعة، نقرر نلونها أو لا
+    for (const part of parts) {
+        if (highlightWords.includes(part)) {
+            const mark = document.createElement("mark");
+            mark.textContent = part;
+            previewBox.appendChild(mark);
+        } else {
+            previewBox.append(part);
+        }
     }
 
 });
