@@ -112,5 +112,21 @@ checkButton.addEventListener("click", function () {
 
     resultBox.textContent += "\n\n" + reasons.join("\n");
 
-    
+    previewBox.textContent = "";
+    const word = "حظر";
+    const start = text.indexOf(word);
+    console.log("مكان الكلمة:", start);
+
+    if (start !== -1) {
+        const end = start + word.length;
+        const before = text.slice(0, start);
+        const middle = text.slice(start, end);
+        const after = text.slice(end);
+        previewBox.append(before);
+        const mark = document.createElement("mark");
+        mark.textContent = middle;
+        previewBox.appendChild(mark);
+        previewBox.append(after);
+    }
+
 });
