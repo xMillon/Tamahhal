@@ -109,7 +109,7 @@ checkButton.addEventListener("click", function () {
         resultBox.textContent = "لم نجد إشارات معروفة، وهذا لا يعني أنها آمنة";
     }
 
-    resultBox.textContent += "\n\n" + reasons.join("\n");
+    resultBox.textContent += "\n\n" + reasons.join("\n\n");
 
     previewBox.textContent = "";
 
