@@ -7,6 +7,8 @@
     --teal: #0B4A47;
     --teal-soft: #E1EFEC;
     --amber: #F2A93B;
+    --amber-soft: #FDF0D9;
+    --amber-text: #875708;
     --scam: #B3261E;
     --scam-soft: #FBE6E4;
 }
@@ -132,4 +134,19 @@ mark {
 
 #result:empty {
     display: none;
+}
+
+#result.level-high {
+    background: var(--scam-soft);
+    border: 1px solid #F3C9C5;
+}
+
+#result.level-medium {
+    background: var(--amber-soft);
+    border: 1px solid #F5DDB0;
+}
+
+#result.level-none {
+    background: var(--surface-raised);
+    border: 1px solid var(--line);
 }

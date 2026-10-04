@@ -103,10 +103,13 @@ checkButton.addEventListener("click", function () {
 
     if (score >= 4) {
         resultBox.textContent = "علامات احتيال واضحة";
+        resultBox.className = "level-high";
     } else if (score >= 1) {
         resultBox.textContent = "إشارات تستحق الانتباه";
+                resultBox.className = "level-medium";
     } else {
         resultBox.textContent = "لم نجد إشارات معروفة، وهذا لا يعني أنها آمنة";
+                resultBox.className = "level-none";
     }
 
     resultBox.textContent += "\n\n" + reasons.join("\n\n");
