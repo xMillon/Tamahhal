@@ -1,3 +1,44 @@
+:root {
+    --surface: #FAF8F3;
+    --surface-raised: #FFFFFF;
+    --line: #E6E1D6;
+    --ink: #122523;
+    --ink-muted: #56625F;
+    --teal: #0B4A47;
+    --teal-soft: #E1EFEC;
+    --amber: #F2A93B;
+    --scam: #B3261E;
+    --scam-soft: #FBE6E4;
+}
+
+body {
+    margin: 0;
+    background: var(--surface);
+    color: var(--ink);
+    font-family: "Readex Pro", system-ui, sans-serif;
+}
+
+main {
+    max-width: 440px;
+    margin: 0 auto;
+    padding: 28px 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 26px;
+    font-weight: 700;
+    color: var(--teal);
+}
+
+label {
+    font-size: 15px;
+    font-weight: 500;
+}
+
 #result {
     white-space: pre-line;
 }
