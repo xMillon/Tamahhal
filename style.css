@@ -36,6 +36,35 @@ h1 {
     color: var(--teal);
 }
 
+header {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.tagline {
+    margin: 0;
+    font-size: 15px;
+    color: var(--ink-muted);
+}
+
+.optional {
+    color: var(--ink-muted);
+    font-weight: 400;
+}
+
+.privacy {
+    margin: 0;
+    text-align: center;
+    font-size: 13px;
+    color: var(--ink-muted);
+}
+
+::placeholder {
+    color: #9AA3A0;
+}
+
 label {
     font-size: 15px;
     font-weight: 500;

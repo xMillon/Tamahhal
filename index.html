@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تمهل - قبل ماتضغط</title>
+    <title>تمهّل — قبل ما تضغط</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Readex+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -12,14 +12,16 @@
 </head>
 <body>
     <main>
-        <h1>تمهل</h1>
-        <p>تمهل، قبل ماتضغط</p>
+        <header>
+        <h1>تمهّل</h1>
+        <p class="tagline">قبل ما تضغط، تمهّل.</p>
+        </header>
 
         <label for="message">نص الرسالة</label>
-        <textarea id="message" rows="6"></textarea>
+        <textarea id="message" rows="6" placeholder="الصق الرسالة هنا"></textarea>
 
-        <label for="sender">من ارسل الرسالة؟ (اختياري)</label>
-        <input id="sender" type="text">
+        <label for="sender">من أرسل الرسالة؟ <span class="optional">(اختياري)</span></label>
+        <input id="sender" type="text" placeholder="رقم أو اسم المرسل">
 
         <button id="check">افحص الرسالة</button>
 
@@ -27,6 +29,7 @@
 
         <p id="preview"></p>
 
-        <p>تنويه: الرسالة لاتغادر جهازك</p>
+        <p class="privacy">الرسالة ما تطلع من جهازك.</p>
     </main>
 </body>
+</html>
