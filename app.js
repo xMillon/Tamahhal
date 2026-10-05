@@ -70,7 +70,7 @@ checkButton.addEventListener("click", function () {
 
     if (/05\d{8}/.test(text)) {
         score += 2;
-        reasons.push("تمهّل… مو كل رقم جوال جهة رسمية. الجهات تستخدم أرقامًا موحدة، خذ رقمها من تطبيقها أو موقعها الرسمي، مو من الرسالة.");
+        reasons.push("تمهّل… الرسالة فيها رقم جوال. لو تقول إنها من بنك أو جهة رسمية، خذ رقمهم من تطبيقهم أو موقعهم، مو من الرسالة.");
     }
 
     console.log(sender);
@@ -116,22 +116,24 @@ checkButton.addEventListener("click", function () {
 
     previewBox.textContent = "";
 
-    const highlightWords = [
-        "إغلاق" , "اغلاق" , "تجميد" , "تعليق" , "إيقاف" , "ايقاف" , "توقف" , "حظر" , "حدث بياناتك" , "تحديث بياناتك" , "الاتصال" , "رمز التحقق" , "اكد هويتك" , "أكد هويتك" , "أكّد هويتك" , "حدّث بياناتك" , "تقييد" , "انهاء" , "إنهاء" , "إبطال" , "مصادرة" ,
-    ];
+    if (score > 0) {
+        const highlightWords = [
+            "إغلاق", "اغلاق", "تجميد", "تعليق", "إيقاف", "ايقاف", "توقف", "حظر",
+            "حدث بياناتك", "حدّث بياناتك", "تحديث بياناتك", "الاتصال", "رمز التحقق",
+            "اكد هويتك", "أكد هويتك", "أكّد هويتك", "تقييد", "انهاء", "إنهاء", "إبطال", "مصادرة"
+        ];
 
-    // 2. المقص: نقص الرسالة عند كل الكلمات مرة وحدة
-    const pattern = new RegExp("(" + highlightWords.join("|") + ")");
-    const parts = text.split(pattern);
+        const pattern = new RegExp("(" + highlightWords.join("|") + ")");
+        const parts = text.split(pattern);
 
-    // 3. لوب: لكل قطعة، نقرر نلونها أو لا
-    for (const part of parts) {
-        if (highlightWords.includes(part)) {
-            const mark = document.createElement("mark");
-            mark.textContent = part;
-            previewBox.appendChild(mark);
-        } else {
-            previewBox.append(part);
+        for (const part of parts) {
+            if (highlightWords.includes(part)) {
+                const mark = document.createElement("mark");
+                mark.textContent = part;
+                previewBox.appendChild(mark);
+            } else {
+                previewBox.append(part);
+            }
         }
     }
 
