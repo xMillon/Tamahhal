@@ -36,6 +36,12 @@ h1 {
     color: var(--teal);
 }
 
+.logo {
+    display: block;
+    height: 56px;
+    width: auto;
+}
+
 header {
     display: flex;
     flex-direction: column;
